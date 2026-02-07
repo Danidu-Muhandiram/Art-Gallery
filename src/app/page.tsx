@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 const wallpapers = Array.from({ length: 12 }, (_, index) => ({
   src: "/wallpapers/portrait1.png",
@@ -18,10 +21,12 @@ function MasonrySection({
   title,
   description,
   items,
+  columnsClass,
 }: {
   title: string;
   description: string;
   items: Array<{ src: string; title: string; width: number; height: number }>;
+  columnsClass: string;
 }) {
   return (
     <section className="space-y-8">
@@ -33,47 +38,126 @@ function MasonrySection({
           {description}
         </p>
       </div>
-      <div className="columns-1 gap-6 sm:columns-2 lg:columns-3 xl:columns-4 [column-fill:balance]">
+      <div
+        className={`${columnsClass} columns-1 gap-6 [column-fill:balance]`}
+      >
         {items.map((item, index) => (
-          <figure
-            key={item.src}
-            className="mb-6 inline-block w-full break-inside-avoid rounded-3xl bg-white p-3 shadow-[0_18px_50px_rgba(17,20,24,0.12)]"
-          >
-            <div className="overflow-hidden rounded-2xl bg-[#111418]">
-              <Image
-                src={item.src}
-                alt={item.title}
-                width={item.width}
-                height={item.height}
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                className="h-auto w-full"
-                priority={index < 2}
-              />
-            </div>
-            <figcaption className="pt-3 text-sm text-[#5b6066]">
-              {item.title}
-            </figcaption>
-          </figure>
+          <GalleryCard
+            key={`${item.src}-${index}`}
+            item={item}
+            priority={index < 2}
+          />
         ))}
       </div>
     </section>
   );
 }
 
+function GalleryCard({
+  item,
+  priority,
+}: {
+  item: { src: string; title: string; width: number; height: number };
+  priority: boolean;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <figure className="mb-6 inline-block w-full break-inside-avoid rounded-3xl bg-white p-3 shadow-[0_18px_50px_rgba(17,20,24,0.12)]">
+      <button
+        type="button"
+        onClick={() => setIsOpen(true)}
+        className="group relative w-full cursor-zoom-in overflow-hidden rounded-2xl bg-[#111418] text-left"
+        aria-label="Open artwork preview"
+      >
+        <Image
+          src={item.src}
+          alt={item.title}
+          width={item.width}
+          height={item.height}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          className="h-auto w-full transition duration-300 ease-out group-hover:scale-[1.04]"
+          priority={priority}
+        />
+        <div className="absolute inset-0 flex items-end justify-between gap-2 bg-black/0 p-4 opacity-0 transition duration-300 ease-out group-hover:bg-black/30 group-hover:opacity-100">
+          <span className="rounded-full bg-white/90 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-[#111418]">
+            View
+          </span>
+        </div>
+      </button>
+      {isOpen ? (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-4 transition-opacity duration-300 ease-out"
+          onClick={() => setIsOpen(false)}
+        >
+          <div className="relative flex h-[90vh] w-[90vw] max-w-6xl items-center justify-center animate-[zoomIn_200ms_ease-out]">
+            <Image
+              src={item.src}
+              alt={item.title}
+              width={item.width}
+              height={item.height}
+              sizes="90vw"
+              className="h-full w-full rounded-3xl object-contain"
+            />
+            <div className="absolute bottom-6 right-6 flex gap-3">
+              <a
+                href={item.src}
+                download
+                className="rounded-full bg-white px-5 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-[#111418] transition duration-200 ease-out hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
+                onClick={(event) => event.stopPropagation()}
+              >
+                Download
+              </a>
+              <button
+                className="rounded-full border border-white/70 px-5 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-white transition duration-200 ease-out hover:-translate-y-0.5 hover:border-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+                onClick={(event) => event.stopPropagation()}
+              >
+                Share
+              </button>
+            </div>
+            <button
+              type="button"
+              onClick={() => setIsOpen(false)}
+              className="absolute right-6 top-6 rounded-full border border-white/50 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-white transition duration-200 ease-out hover:border-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      ) : null}
+    </figure>
+  );
+}
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#f9fafb]">
-      <header className="bg-[#111418] px-6 pb-16 pt-8 text-white sm:px-10 lg:px-16">
+      <nav className="fixed left-0 right-0 top-0 z-40 border-b border-white/10 bg-[#111418]/95 px-6 py-4 text-white backdrop-blur sm:px-10 lg:px-16">
+        <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-6 text-xs uppercase tracking-[0.3em] text-white/70">
+          <a href="#top" className="text-white/80 transition hover:text-white">
+            NOIR ATlAS
+          </a>
+          <div className="flex flex-wrap gap-6 text-[0.7rem]">
+            <a href="#gallery" className="transition hover:text-white">
+              Gallery
+            </a>
+            <a href="#wallpapers" className="transition hover:text-white">
+              Wallpapers
+            </a>
+            <a href="#backgrounds" className="transition hover:text-white">
+              Backgrounds
+            </a>
+            <a href="#about" className="transition hover:text-white">
+              About
+            </a>
+          </div>
+        </div>
+      </nav>
+      <header
+        id="top"
+        className="bg-[#111418] px-6 pb-16 pt-24 text-white sm:px-10 lg:px-16"
+      >
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-10">
-          <nav className="flex flex-wrap items-center justify-between gap-6 text-xs uppercase tracking-[0.3em] text-white/70">
-            <span>NOIR ATlAS</span>
-            <div className="flex gap-6 text-[0.7rem]">
-              <span>Gallery</span>
-              <span>Wallpapers</span>
-              <span>Backgrounds</span>
-              <span>About</span>
-            </div>
-          </nav>
           <div className="flex flex-col gap-6">
             <p className="text-xs uppercase tracking-[0.4em] text-white/70">
               Personal Art Gallery
@@ -104,7 +188,10 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 py-14 sm:px-10 lg:px-16">
+      <main
+        id="gallery"
+        className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 py-14 sm:px-10 lg:px-16"
+      >
         <section className="grid gap-6 rounded-3xl border border-black/5 bg-white p-6 shadow-[0_18px_50px_rgba(17,20,24,0.08)] sm:grid-cols-3 sm:p-8">
           <div className="space-y-2">
             <p className="text-xs uppercase tracking-[0.3em] text-[#8b9096]">
@@ -141,17 +228,26 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <MasonrySection
-          title="Wallpapers"
-          description="Bold, immersive compositions crafted for desktop and mobile displays."
-          items={wallpapers}
-        />
-        <MasonrySection
-          title="Backgrounds"
-          description="Quiet textures and subtle gradients made for UI, print, and motion work."
-          items={backgrounds}
-        />
-        <section className="grid gap-6 rounded-3xl bg-[#111418] p-8 text-white sm:grid-cols-[1.2fr_0.8fr]">
+        <div id="wallpapers">
+          <MasonrySection
+            title="Wallpapers"
+            description="Bold, immersive compositions crafted for desktop and mobile displays."
+            items={wallpapers}
+            columnsClass="sm:columns-2 lg:columns-3 xl:columns-4"
+          />
+        </div>
+        <div id="backgrounds">
+          <MasonrySection
+            title="Backgrounds"
+            description="Quiet textures and subtle gradients made for UI, print, and motion work."
+            items={backgrounds}
+            columnsClass="sm:columns-2 lg:columns-2 xl:columns-3"
+          />
+        </div>
+        <section
+          id="about"
+          className="grid gap-6 rounded-3xl bg-[#111418] p-8 text-white sm:grid-cols-[1.2fr_0.8fr]"
+        >
           <div className="space-y-4">
             <h3 className="text-2xl font-semibold">Collection details</h3>
             <p className="text-sm text-white/75">
