@@ -130,6 +130,8 @@ function GalleryCard({
 }
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-[#f9fafb]">
       <nav className="fixed left-0 right-0 top-0 z-40 border-b border-white/10 bg-[#111418]/95 px-6 py-4 text-white backdrop-blur sm:px-10 lg:px-16">
@@ -137,7 +139,7 @@ export default function Home() {
           <a href="#top" className="text-white/80 transition hover:text-white">
             NOIR ATlAS
           </a>
-          <div className="flex flex-wrap gap-6 text-[0.7rem]">
+          <div className="hidden flex-wrap gap-6 text-[0.7rem] sm:flex">
             <a href="#gallery" className="transition hover:text-white">
               Gallery
             </a>
@@ -151,7 +153,48 @@ export default function Home() {
               About
             </a>
           </div>
+          <button
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white/80 transition hover:border-white/70 hover:text-white sm:hidden"
+          >
+            <span className="text-base">☰</span>
+          </button>
         </div>
+        {isMenuOpen ? (
+          <div className="mx-auto mt-4 grid w-full max-w-6xl gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-[0.7rem] uppercase tracking-[0.3em] text-white/80 sm:hidden">
+            <a
+              href="#gallery"
+              onClick={() => setIsMenuOpen(false)}
+              className="transition hover:text-white"
+            >
+              Gallery
+            </a>
+            <a
+              href="#wallpapers"
+              onClick={() => setIsMenuOpen(false)}
+              className="transition hover:text-white"
+            >
+              Wallpapers
+            </a>
+            <a
+              href="#backgrounds"
+              onClick={() => setIsMenuOpen(false)}
+              className="transition hover:text-white"
+            >
+              Backgrounds
+            </a>
+            <a
+              href="#about"
+              onClick={() => setIsMenuOpen(false)}
+              className="transition hover:text-white"
+            >
+              About
+            </a>
+          </div>
+        ) : null}
       </nav>
       <header
         id="top"
