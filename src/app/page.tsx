@@ -66,7 +66,7 @@ export default function Home() {
       <header className="bg-[#111418] px-6 pb-16 pt-8 text-white sm:px-10 lg:px-16">
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-10">
           <nav className="flex flex-wrap items-center justify-between gap-6 text-xs uppercase tracking-[0.3em] text-white/70">
-            <span>Ink &amp; Light</span>
+            <span>NOIR ATlAS</span>
             <div className="flex gap-6 text-[0.7rem]">
               <span>Gallery</span>
               <span>Wallpapers</span>
@@ -79,17 +79,26 @@ export default function Home() {
               Personal Art Gallery
             </p>
             <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl">
-              Ink &amp; Light
+              NOIR ATlAS
             </h1>
             <p className="max-w-2xl text-base text-white/80 sm:text-lg">
-              A personal collection of monochrome studies—wallpapers and
-              backgrounds crafted from my original artwork. Each piece is
-              presented cleanly and responsively in portrait or landscape.
+              A curated collection of original AI artworks and illustrations, crafted as high-resolution wallpapers and 
+              background plates. Every release is designed for crisp, 
+              balanced viewing across portrait and landscape screens -
+              from mobile to ultra-wide.
             </p>
-            <div className="flex flex-wrap gap-4 text-xs text-white/60">
-              <span>Ink black: #111418</span>
-              <span>White: #ffffff</span>
-              <span>Light background: #f9fafb</span>
+            <div className="flex flex-wrap items-center gap-4 text-xs text-white/60">
+              <span>Creator: Danidu Muhandiram</span>
+              <span>Free downloads</span>
+              <span>Non‑commercial use only</span>
+            </div>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <button className="rounded-full bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#111418]">
+                Contact
+              </button>
+              <button className="rounded-full border border-white/40 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition hover:border-white/70">
+                Portfolio
+              </button>
             </div>
           </div>
         </div>
@@ -101,45 +110,45 @@ export default function Home() {
             <p className="text-xs uppercase tracking-[0.3em] text-[#8b9096]">
               Statement
             </p>
-            <p className="text-lg font-semibold text-[#111418]">Personal work</p>
+            <p className="text-lg font-semibold text-[#111418]">
+              Personal Arts
+            </p>
             <p className="text-sm text-[#5b6066]">
-              A curated selection of my original art studies—focused on light,
-              depth, and clean monochrome balance.
+              A curated collection of my AI artworks and illustrations,
+              refined into premium wallpapers and atmospheric backgrounds.
             </p>
           </div>
           <div className="space-y-2">
             <p className="text-xs uppercase tracking-[0.3em] text-[#8b9096]">
-              Medium
+              Availability
             </p>
-            <p className="text-lg font-semibold text-[#111418]">
-              Digital abstracts
-            </p>
+            <p className="text-lg font-semibold text-[#111418]">Free to use</p>
             <p className="text-sm text-[#5b6066]">
-              Built with layered gradients and soft textures, designed for
-              wallpapers, posters, and motion backdrops.
+              Shared for personal use only. Not licensed for commercial
+              projects, resale, or stock redistribution.
             </p>
           </div>
           <div className="space-y-2">
             <p className="text-xs uppercase tracking-[0.3em] text-[#8b9096]">
-              Release
+              Platforms
             </p>
             <p className="text-lg font-semibold text-[#111418]">
-              Ongoing series
+              Stock contributor
             </p>
             <p className="text-sm text-[#5b6066]">
-              New works added regularly—each piece explores contrast, scale, and
-              quiet spatial rhythm.
+              I contribute to popular stock platforms and publish select works
+              here as free downloads for the community.
             </p>
           </div>
         </section>
         <MasonrySection
           title="Wallpapers"
-          description="High-impact compositions built for desktop and mobile screens. Add any resolution—Next.js handles sizing, compression, and lazy loading automatically."
+          description="Bold, immersive compositions crafted for desktop and mobile displays."
           items={wallpapers}
         />
         <MasonrySection
           title="Backgrounds"
-          description="Minimal textures and gradients for UI, print, and motion. Mix portrait and landscape formats freely—everything stays aligned."
+          description="Quiet textures and subtle gradients made for UI, print, and motion work."
           items={backgrounds}
         />
         <section className="grid gap-6 rounded-3xl bg-[#111418] p-8 text-white sm:grid-cols-[1.2fr_0.8fr]">
