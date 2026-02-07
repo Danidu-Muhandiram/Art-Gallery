@@ -177,10 +177,10 @@ export default function Home() {
               <span>Non‑commercial use only</span>
             </div>
             <div className="flex flex-wrap gap-3 pt-2">
-              <button className="rounded-full bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#111418]">
+              <button className="rounded-full bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#111418] transition duration-200 ease-out hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
                 Contact
               </button>
-              <button className="rounded-full border border-white/40 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition hover:border-white/70">
+              <button className="rounded-full border border-white/40 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition duration-200 ease-out hover:-translate-y-0.5 hover:border-white/70 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60">
                 Portfolio
               </button>
             </div>
@@ -251,31 +251,31 @@ export default function Home() {
           <div className="space-y-4">
             <h3 className="text-2xl font-semibold">Collection details</h3>
             <p className="text-sm text-white/75">
-              Replace the two sample files with your real artwork. Keep the same
-              filenames for instant updates: portrait1.png for wallpapers and
-              landscape1.png for backgrounds. The layout will adapt
-              automatically—no additional edits needed.
+              Curated by Danidu Muhandiram, an undergraduate who creates AI
+              artworks and illustrations as a personal hobby. New pieces are
+              added over time, shared here for the community to enjoy for
+              personal use.
             </p>
           </div>
           <div className="grid gap-3 text-xs text-white/65">
             <div className="flex items-center justify-between border-b border-white/10 pb-2">
-              <span>Recommended portrait</span>
-              <span>9:16 or 4:5</span>
+              <span>Creator</span>
+              <span>Danidu Muhandiram</span>
             </div>
             <div className="flex items-center justify-between border-b border-white/10 pb-2">
-              <span>Recommended landscape</span>
-              <span>16:9 or 3:2</span>
+              <span>Use</span>
+              <span>Personal use only</span>
             </div>
             <div className="flex items-center justify-between">
-              <span>Theme</span>
-              <span>Ink / White / Light</span>
+              <span>License</span>
+              <span>Non‑commercial</span>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-black/5 bg-white px-6 py-10 text-center text-xs text-[#5b6066] sm:px-10 lg:px-16">
-        © 2026 Ink &amp; Light — Art Gallery
+      <footer className="border-t border-black/5 bg-white px-6 py-6 text-center text-xs text-[#5b6066] sm:px-10 lg:px-16">
+        © 2026 Noir Atlas — Art Gallery · Danidu Muhandiram
       </footer>
     </div>
   );
