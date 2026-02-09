@@ -216,6 +216,78 @@ body {
   }
 }
 
+@keyframes scrollPulse {
+  0% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  60% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+}
+
+@keyframes scrollIndicatorIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.scroll-indicator {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  z-index: 45;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 20, 24, 0.15);
+  background: rgba(255, 255, 255, 0.92);
+  color: #111418;
+  padding: 8px 14px;
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 35px rgba(17, 20, 24, 0.12);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  animation: scrollIndicatorIn 0.6s ease-out both;
+}
+
+.scroll-indicator.is-hidden {
+  opacity: 0;
+  transform: translateX(-50%) translateY(12px);
+  pointer-events: none;
+}
+
+.scroll-indicator__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #111418;
+  animation: scrollPulse 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-indicator__dot {
+    animation: none;
+  }
+  .scroll-indicator {
+    animation: none;
+  }
+}
+
 @keyframes zoomIn {
   0% {
     opacity: 0;

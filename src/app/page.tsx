@@ -147,6 +147,8 @@ function GalleryCard({
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [isScrollHintHidden, setIsScrollHintHidden] = useState(false);
+  const [showScrollHint, setShowScrollHint] = useState(false);
 
   useEffect(() => {
     if (isLoading) return;
@@ -193,6 +195,48 @@ export default function Home() {
     return () => window.clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    if (isLoading) return;
+
+    const hintTimer = window.setTimeout(() => {
+      if (window.scrollY < 10 && !isScrollHintHidden) {
+        setShowScrollHint(true);
+      }
+    }, 900);
+
+    return () => window.clearTimeout(hintTimer);
+  }, [isLoading, isScrollHintHidden]);
+
+  useEffect(() => {
+    if (isLoading || isScrollHintHidden) return;
+
+    const handleDismiss = () => {
+      setIsScrollHintHidden(true);
+      setShowScrollHint(false);
+    };
+
+    const handleScroll = () => {
+      if (window.scrollY > 2) {
+        setIsScrollHintHidden(true);
+        setShowScrollHint(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("wheel", handleDismiss, { passive: true });
+    window.addEventListener("touchstart", handleDismiss, { passive: true });
+    window.addEventListener("touchmove", handleDismiss, { passive: true });
+    window.addEventListener("keydown", handleDismiss);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("wheel", handleDismiss);
+      window.removeEventListener("touchstart", handleDismiss);
+      window.removeEventListener("touchmove", handleDismiss);
+      window.removeEventListener("keydown", handleDismiss);
+    };
+  }, [isLoading, isScrollHintHidden]);
+
   return (
     <div className="min-h-screen bg-[#f9fafb]">
       {isLoading ? (
@@ -210,6 +254,17 @@ export default function Home() {
             </p>
           </div>
           <div className="loader-glow" aria-hidden />
+        </div>
+      ) : null}
+      {!isLoading && showScrollHint ? (
+        <div
+          className={`scroll-indicator ${isScrollHintHidden ? "is-hidden" : ""}`}
+          role="note"
+          aria-live="polite"
+          onClick={() => setIsScrollHintHidden(true)}
+        >
+          <span className="scroll-indicator__dot" />
+          Explore premium artworks
         </div>
       ) : null}
       <nav className="fixed left-0 right-0 top-0 z-40 border-b border-white/10 bg-[#111418]/95 px-6 py-4 text-white backdrop-blur sm:px-10 lg:px-16">
