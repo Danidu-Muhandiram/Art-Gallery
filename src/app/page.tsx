@@ -146,8 +146,11 @@ function GalleryCard({
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    if (isLoading) return;
+
     const elements = Array.from(
       document.querySelectorAll<HTMLElement>("[data-animate='text']")
     );
@@ -157,6 +160,8 @@ export default function Home() {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
+
+    elements.forEach((element) => element.classList.remove("is-visible"));
 
     if (prefersReducedMotion) {
       elements.forEach((element) => element.classList.add("is-visible"));
@@ -178,10 +183,35 @@ export default function Home() {
     elements.forEach((element) => observer.observe(element));
 
     return () => observer.disconnect();
+  }, [isLoading]);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setIsLoading(false);
+    }, 1800);
+
+    return () => window.clearTimeout(timer);
   }, []);
 
   return (
     <div className="min-h-screen bg-[#f9fafb]">
+      {isLoading ? (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black text-white">
+          <div className="flex max-w-2xl flex-col items-center gap-6 px-6 text-center">
+            <p className="text-xs uppercase tracking-[0.4em] text-white/70 animate-loader-fade">
+              Curated Art Gallery
+            </p>
+            <h1 className="text-4xl font-semibold tracking-tight sm:text-6xl animate-loader-title">
+              NOIR ATlAS
+            </h1>
+            <p className="text-sm text-white/70 sm:text-base animate-loader-fade loader-delay-long">
+              High‑resolution wallpapers and atmospheric backgrounds, crafted
+              for immersive screens and quiet spaces.
+            </p>
+          </div>
+          <div className="loader-glow" aria-hidden />
+        </div>
+      ) : null}
       <nav className="fixed left-0 right-0 top-0 z-40 border-b border-white/10 bg-[#111418]/95 px-6 py-4 text-white backdrop-blur sm:px-10 lg:px-16">
         <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-6 text-xs uppercase tracking-[0.3em] text-white/70">
           <a href="#top" className="text-white/80 transition hover:text-white">
