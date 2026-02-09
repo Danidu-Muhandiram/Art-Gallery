@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 
 const wallpapers = Array.from({ length: 12 }, (_, index) => ({
   src: "/wallpapers/portrait1.png",
@@ -31,10 +31,18 @@ function MasonrySection({
   return (
     <section className="space-y-8">
       <div className="space-y-3">
-        <h2 className="text-2xl font-semibold tracking-tight text-[#111418] sm:text-3xl">
+        <h2
+          className="reveal-text text-2xl font-semibold tracking-tight text-[#111418] sm:text-3xl"
+          data-animate="text"
+          style={{ "--delay": "120ms" } as CSSProperties}
+        >
           {title}
         </h2>
-        <p className="max-w-2xl text-sm text-[#5b6066] sm:text-base">
+        <p
+          className="reveal-text--fade max-w-2xl text-sm text-[#5b6066] sm:text-base"
+          data-animate="text"
+          style={{ "--delay": "220ms" } as CSSProperties}
+        >
           {description}
         </p>
       </div>
@@ -46,6 +54,7 @@ function MasonrySection({
             key={`${item.src}-${index}`}
             item={item}
             priority={index < 2}
+            delay={index * 70}
           />
         ))}
       </div>
@@ -56,14 +65,20 @@ function MasonrySection({
 function GalleryCard({
   item,
   priority,
+  delay,
 }: {
   item: { src: string; title: string; width: number; height: number };
   priority: boolean;
+  delay: number;
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <figure className="mb-6 inline-block w-full break-inside-avoid rounded-3xl bg-white p-3 shadow-[0_18px_50px_rgba(17,20,24,0.12)]">
+    <figure
+      className="reveal-media mb-6 inline-block w-full break-inside-avoid rounded-3xl bg-white p-3 shadow-[0_18px_50px_rgba(17,20,24,0.12)]"
+      data-animate="text"
+      style={{ "--delay": `${delay}ms` } as CSSProperties}
+    >
       <button
         type="button"
         onClick={() => setIsOpen(true)}
@@ -131,6 +146,39 @@ function GalleryCard({
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const elements = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-animate='text']")
+    );
+
+    if (!elements.length) return;
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) {
+      elements.forEach((element) => element.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -10% 0px" }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#f9fafb]">
@@ -202,24 +250,43 @@ export default function Home() {
       >
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-10">
           <div className="flex flex-col gap-6">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/70">
+            <p
+              className="reveal-text--slide text-xs uppercase tracking-[0.4em] text-white/70"
+              data-animate="text"
+            >
               Personal Art Gallery
             </p>
-            <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl">
+            <h1
+              className="reveal-text text-3xl font-semibold tracking-tight sm:text-5xl"
+              data-animate="text"
+              style={{ "--delay": "120ms" } as CSSProperties}
+            >
               NOIR ATlAS
             </h1>
-            <p className="max-w-2xl text-base text-white/80 sm:text-lg">
+            <p
+              className="reveal-text max-w-2xl text-base text-white/80 sm:text-lg"
+              data-animate="text"
+              style={{ "--delay": "220ms" } as CSSProperties}
+            >
               A curated collection of original AI artworks and illustrations, crafted as high-resolution wallpapers and 
               background plates. Every release is designed for crisp, 
               balanced viewing across portrait and landscape screens -
               from mobile to ultra-wide.
             </p>
-            <div className="flex flex-wrap items-center gap-4 text-xs text-white/60">
+            <div
+              className="reveal-text flex flex-wrap items-center gap-4 text-xs text-white/60"
+              data-animate="text"
+              style={{ "--delay": "320ms" } as CSSProperties}
+            >
               <span>Creator: Danidu Muhandiram</span>
               <span>Free downloads</span>
               <span>Non‑commercial use only</span>
             </div>
-            <div className="flex flex-wrap gap-3 pt-2">
+            <div
+              className="reveal-text flex flex-wrap gap-3 pt-2"
+              data-animate="text"
+              style={{ "--delay": "420ms" } as CSSProperties}
+            >
               <button className="rounded-full bg-white px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#111418] transition duration-200 ease-out hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
                 Contact
               </button>
@@ -237,35 +304,70 @@ export default function Home() {
       >
         <section className="grid gap-6 rounded-3xl border border-black/5 bg-white p-6 shadow-[0_18px_50px_rgba(17,20,24,0.08)] sm:grid-cols-3 sm:p-8">
           <div className="space-y-2">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#8b9096]">
+            <p
+              className="reveal-text--slide text-xs uppercase tracking-[0.3em] text-[#8b9096]"
+              data-animate="text"
+            >
               Statement
             </p>
-            <p className="text-lg font-semibold text-[#111418]">
+            <p
+              className="reveal-text text-lg font-semibold text-[#111418]"
+              data-animate="text"
+              style={{ "--delay": "120ms" } as CSSProperties}
+            >
               Personal Arts
             </p>
-            <p className="text-sm text-[#5b6066]">
+            <p
+              className="reveal-text--fade text-sm text-[#5b6066]"
+              data-animate="text"
+              style={{ "--delay": "220ms" } as CSSProperties}
+            >
               A curated collection of my AI artworks and illustrations,
               refined into premium wallpapers and atmospheric backgrounds.
             </p>
           </div>
           <div className="space-y-2">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#8b9096]">
+            <p
+              className="reveal-text--slide text-xs uppercase tracking-[0.3em] text-[#8b9096]"
+              data-animate="text"
+            >
               Availability
             </p>
-            <p className="text-lg font-semibold text-[#111418]">Free to use</p>
-            <p className="text-sm text-[#5b6066]">
+            <p
+              className="reveal-text text-lg font-semibold text-[#111418]"
+              data-animate="text"
+              style={{ "--delay": "120ms" } as CSSProperties}
+            >
+              Free to use
+            </p>
+            <p
+              className="reveal-text--fade text-sm text-[#5b6066]"
+              data-animate="text"
+              style={{ "--delay": "220ms" } as CSSProperties}
+            >
               Shared for personal use only. Not licensed for commercial
               projects, resale, or stock redistribution.
             </p>
           </div>
           <div className="space-y-2">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#8b9096]">
+            <p
+              className="reveal-text--slide text-xs uppercase tracking-[0.3em] text-[#8b9096]"
+              data-animate="text"
+            >
               Platforms
             </p>
-            <p className="text-lg font-semibold text-[#111418]">
+            <p
+              className="reveal-text text-lg font-semibold text-[#111418]"
+              data-animate="text"
+              style={{ "--delay": "120ms" } as CSSProperties}
+            >
               Stock contributor
             </p>
-            <p className="text-sm text-[#5b6066]">
+            <p
+              className="reveal-text--fade text-sm text-[#5b6066]"
+              data-animate="text"
+              style={{ "--delay": "220ms" } as CSSProperties}
+            >
               I contribute to popular stock platforms and publish select works
               here as free downloads for the community.
             </p>
