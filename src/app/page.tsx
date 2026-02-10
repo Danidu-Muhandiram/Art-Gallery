@@ -3,12 +3,39 @@
 import Image from "next/image";
 import { useEffect, useState, type CSSProperties } from "react";
 
-const wallpapers = Array.from({ length: 12 }, (_, index) => ({
-  src: "/wallpapers/portrait1.png",
-  title: `Portrait ${String(index + 1).padStart(2, "0")} — Ink Bloom`,
+const wallpaperFiles = [
+  "Ancient_statue.png",
+  "Ancient_statue_moonlight.png",
+  "anime_fox_charac.png",
+  "astronaut_touching.png",
+  "A_girl_with_brown.png",
+  "A_mirror_reflecting.png",
+  "a_silhouette_of_a_side.png",
+  "blurred_gradient_col.png",
+  "Books_that_read.png",
+  "cute_anime_girl.png",
+  "cute_little_anime.png",
+  "depressed_boy.png",
+  "futuristic_bike.png",
+  "Mirror_reflecting.png",
+  "portrait1.png",
+  "shadowy_figure.png",
+  "Simple_blurred_gradient.png",
+  "Therapy.png",
+];
+
+const formatTitle = (filename: string) =>
+  filename
+    .replace(/\.[^/.]+$/, "")
+    .replace(/[_-]+/g, " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+
+const wallpapers = wallpaperFiles.map((file) => ({
+  src: `/wallpapers/${file}`,
+  title: formatTitle(file),
   width: 900,
   height: 1600,
-  category: "wallpaper" as "wallpaper",
+  category: "wallpaper" as const,
 }));
 
 const backgrounds = Array.from({ length: 12 }, (_, index) => ({
@@ -54,9 +81,7 @@ function MasonrySection({
           {description}
         </p>
       </div>
-      <div
-        className={`${columnsClass} columns-1 gap-6 [column-fill:balance]`}
-      >
+      <div className={`grid gap-6 ${columnsClass}`}>
         {items.map((item, index) => (
           <GalleryCard
             key={`${item.src}-${index}`}
@@ -93,7 +118,7 @@ function GalleryCard({
 
   return (
     <figure
-      className="reveal-media mb-6 inline-block w-full break-inside-avoid rounded-3xl bg-white p-3 shadow-[0_18px_50px_rgba(17,20,24,0.12)]"
+      className="reveal-media w-full rounded-3xl bg-white p-3 shadow-[0_18px_50px_rgba(17,20,24,0.12)]"
       data-animate="text"
       style={{ "--delay": `${delay}ms` } as CSSProperties}
     >
@@ -481,7 +506,7 @@ export default function Home() {
             title="Wallpapers"
             description="Bold, immersive compositions crafted for desktop and mobile displays."
             items={wallpapers}
-            columnsClass="sm:columns-2 lg:columns-3 xl:columns-4"
+            columnsClass="sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
           />
         </div>
         <div id="backgrounds">
@@ -489,7 +514,7 @@ export default function Home() {
             title="Backgrounds"
             description="Quiet textures and subtle gradients made for UI, print, and motion work."
             items={backgrounds}
-            columnsClass="sm:columns-2 lg:columns-2 xl:columns-3"
+            columnsClass="sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3"
           />
         </div>
         <section
