@@ -2,9 +2,22 @@
 
 Noir Atlas is a modern, minimalist art gallery experience built with Next.js. It showcases high-resolution wallpapers and atmospheric backgrounds with immersive text and image motion, a cinematic loading sequence, and a clean, editorial layout.
 
-![Desktop Preview](./largess.png)
+## Preview
 
-![Mobile Preview](./mobilegif.gif)
+<table>
+  <tr>
+    <td align="center">
+      <strong>Desktop Experience</strong><br/>
+      <img src="./largess.png" width="100%" />
+    </td>
+    <td align="center">
+      <strong>Mobile Experience</strong><br/>
+      <img src="./mobilegif.gif" width="100%" />
+    </td>
+  </tr>
+</table>
+
+---
 
 ## Highlights
 
