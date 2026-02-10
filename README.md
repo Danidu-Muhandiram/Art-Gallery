@@ -1,8 +1,13 @@
-# Noir Atlas — Art Gallery
+# NOIR ATLAS - Personal Art Gallery 🎨
 
-Noir Atlas is a modern, minimalist art gallery experience built with Next.js. It showcases high-resolution wallpapers and atmospheric backgrounds with immersive text and image motion, a cinematic loading sequence, and a clean, editorial layout.
+**NOIR ATLAS** is a personal art gallery featuring a curated collection of my original **AI artworks and illustrations**, refined into high-resolution wallpapers and atmospheric background plates, with selected works shared here freely for personal use alongside my stock-published designs.
 
-## Preview
+Each release is crafted for crisp, balanced viewing across portrait and landscape screens - from mobile devices to ultra-wide monitors 🖥️📱
+
+Built with Next.js, the experience focuses on cinematic presentation, editorial layout, and subtle motion to let the artwork take center stage ✨
+
+
+## Preview 👀
 
 <table>
   <tr>
@@ -17,35 +22,54 @@ Noir Atlas is a modern, minimalist art gallery experience built with Next.js. It
   </tr>
 </table>
 
----
 
-## Highlights
 
-- Cinematic loader with bold typography and ambient glow
-- Scroll-triggered text and image reveals
-- Clean grid layout for consistent 4-column rows
-- Fullscreen preview modal with download and share actions
-- Custom download filenames based on artwork metadata
-- Accessible motion with reduced-motion support
+## About the Collection 🖼️
 
-## Getting Started
+Noir Atlas is a **personal arts archive**, not a stock marketplace.
 
-Install dependencies and run the dev server:
+It contains selected AI artworks and illustrations curated into premium-quality visual assets, shared freely with the community for **personal use only**.
 
-```bash
-npm install
-npm run dev
-```
+### Categories
+- **Wallpapers**
+- **Backgrounds**
 
-Open http://localhost:3000 to view the site.
+All assets are available in **full quality**, with no watermarks.
 
-## Project Structure
 
-- src/app/page.tsx — main gallery layout and interactions
-- src/app/globals.css — global styles, animations, and effects
-- public/wallpapers — wallpaper assets
-- public/backgrounds — background assets
 
-## Notes
+## Usage & License 📜
 
-The gallery images are served from the public folder. Download filenames are generated from the artwork title and category.
+**Free downloads - personal use only.**
+
+You may:
+- Download and use artworks on personal devices 💻
+- Share the original files with proper credit 🙌
+
+You may **not**:
+- Use artworks in commercial projects ❌
+- Resell or redistribute as stock ❌
+- Include assets in paid products or services ❌
+
+For commercial inquiries, please contact the creator.
+
+
+
+## Creator ✍️
+
+**Danidu Muhandiram**  
+Designer & Developer  
+
+I contribute artworks to popular **stock platforms**, while publishing selected works here as free downloads for the community 🤍
+
+
+
+## Tech Stack 🛠️
+
+- **Next.js**
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **Custom CSS animations**
+
+
