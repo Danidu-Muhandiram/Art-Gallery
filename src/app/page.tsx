@@ -8,6 +8,7 @@ const wallpapers = Array.from({ length: 12 }, (_, index) => ({
   title: `Portrait ${String(index + 1).padStart(2, "0")} — Ink Bloom`,
   width: 900,
   height: 1600,
+  category: "wallpaper",
 }));
 
 const backgrounds = Array.from({ length: 12 }, (_, index) => ({
@@ -15,6 +16,7 @@ const backgrounds = Array.from({ length: 12 }, (_, index) => ({
   title: `Landscape ${String(index + 1).padStart(2, "0")} — Quiet Field`,
   width: 1600,
   height: 900,
+  category: "background",
 }));
 
 function MasonrySection({
@@ -25,7 +27,13 @@ function MasonrySection({
 }: {
   title: string;
   description: string;
-  items: Array<{ src: string; title: string; width: number; height: number }>;
+  items: Array<{
+    src: string;
+    title: string;
+    width: number;
+    height: number;
+    category: "wallpaper" | "background";
+  }>;
   columnsClass: string;
 }) {
   return (
@@ -67,11 +75,21 @@ function GalleryCard({
   priority,
   delay,
 }: {
-  item: { src: string; title: string; width: number; height: number };
+  item: {
+    src: string;
+    title: string;
+    width: number;
+    height: number;
+    category: "wallpaper" | "background";
+  };
   priority: boolean;
   delay: number;
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const downloadName = `${item.category}-${item.title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "")}.png`;
 
   return (
     <figure
@@ -117,7 +135,7 @@ function GalleryCard({
             <div className="absolute bottom-6 right-6 flex gap-3">
               <a
                 href={item.src}
-                download
+                download={downloadName}
                 className="rounded-full bg-white px-5 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-[#111418] transition duration-200 ease-out hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
                 onClick={(event) => event.stopPropagation()}
               >
