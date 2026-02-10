@@ -8,7 +8,7 @@ const wallpapers = Array.from({ length: 12 }, (_, index) => ({
   title: `Portrait ${String(index + 1).padStart(2, "0")} — Ink Bloom`,
   width: 900,
   height: 1600,
-  category: "wallpaper",
+  category: "wallpaper" as "wallpaper",
 }));
 
 const backgrounds = Array.from({ length: 12 }, (_, index) => ({
@@ -16,7 +16,7 @@ const backgrounds = Array.from({ length: 12 }, (_, index) => ({
   title: `Landscape ${String(index + 1).padStart(2, "0")} — Quiet Field`,
   width: 1600,
   height: 900,
-  category: "background",
+  category: "background" as "background",
 }));
 
 function MasonrySection({
