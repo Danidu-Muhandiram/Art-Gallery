@@ -1,10 +1,13 @@
 # NOIR ATLAS - Personal Art Gallery 🎨
 
-**NOIR ATLAS** is a personal art gallery featuring a curated collection of my original **AI artworks and illustrations**, refined into high-resolution wallpapers and atmospheric background plates, with selected works shared here freely for personal use alongside my stock-published designs.
+**NOIR ATLAS** is my personal online art gallery where I share a curated collection of original AI-generated artworks and illustrations.
 
-Each release is crafted for crisp, balanced viewing across portrait and landscape screens - from mobile devices to ultra-wide monitors 🖥️📱
+Each artwork is refined into high-resolution wallpapers and atmospheric background designs. Some of my works are published on stock platforms, and selected pieces are shared here for free personal use.
 
-Built with Next.js, the experience focuses on cinematic presentation, editorial layout, and subtle motion to let the artwork take center stage ✨
+Every release is designed to look clean and balanced on all screen sizes — from mobile phones to ultra-wide monitors 🖥️📱
+
+The website is built with Next.js and focuses on a cinematic layout, smooth motion, and minimal design so the artwork remains the main focus ✨
+
 
 
 ## Preview 👀
@@ -26,32 +29,35 @@ Built with Next.js, the experience focuses on cinematic presentation, editorial 
 
 ## About the Collection 🖼️
 
-Noir Atlas is a **personal arts archive**, not a stock marketplace.
+Noir Atlas is a **personal art archive**, not a stock marketplace.
 
-It contains selected AI artworks and illustrations curated into premium-quality visual assets, shared freely with the community for **personal use only**.
+It features selected AI artworks carefully prepared as premium-quality visual assets. These are shared freely with the community for personal use.
 
 ### Categories
-- **Wallpapers**
-- **Backgrounds**
 
-All assets are available in **full quality**, with no watermarks.
+- Wallpapers  
+- Backgrounds  
+
+All downloads are provided in full quality with no watermarks.
 
 
 
 ## Usage & License 📜
 
-**Free downloads - personal use only.**
+**Free to download — for personal use only.**
 
-You may:
-- Download and use artworks on personal devices 💻
-- Share the original files with proper credit 🙌
+### You may:
 
-You may **not**:
-- Use artworks in commercial projects ❌
-- Resell or redistribute as stock ❌
-- Include assets in paid products or services ❌
+- Use the artworks on your personal devices 💻  
+- Share the original files with proper credit 🙌  
 
-For commercial inquiries, please contact the creator.
+### You may not:
+
+- Use the artworks in commercial projects ❌  
+- Resell or redistribute them as stock ❌  
+- Include them in paid products or services ❌  
+
+For commercial use, please contact me directly.
 
 
 
@@ -60,16 +66,14 @@ For commercial inquiries, please contact the creator.
 **Danidu Muhandiram**  
 Designer & Developer  
 
-I contribute artworks to popular **stock platforms**, while publishing selected works here as free downloads for the community 🤍
+I publish designs on stock platforms and share selected artworks here as free downloads for the community 🤍
 
 
 
 ## Tech Stack 🛠️
 
-- **Next.js**
-- **React**
-- **TypeScript**
-- **Tailwind CSS**
-- **Custom CSS animations**
-
-
+- Next.js  
+- React  
+- TypeScript  
+- Tailwind CSS  
+- Custom CSS animations  
