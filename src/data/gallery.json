@@ -1,147 +1,11 @@
 [
   {
-    "src": "/wallpapers/paloss5.png",
-    "title": "Paloss5",
-    "width": 900,
-    "height": 1600,
-    "category": "wallpaper",
-    "createdAt": "2026-06-03T08:35:18.990Z"
-  },
-  {
-    "src": "/wallpapers/Simple_blurred_gradient.png",
-    "title": "Simple Blurred Gradient",
-    "width": 900,
-    "height": 1600,
-    "category": "wallpaper",
-    "createdAt": "2026-02-10T04:59:38.759Z"
-  },
-  {
     "src": "/wallpapers/shadowy_figure.png",
     "title": "Shadowy Figure",
     "width": 900,
     "height": 1600,
     "category": "wallpaper",
-    "createdAt": "2026-02-10T04:59:38.735Z"
-  },
-  {
-    "src": "/wallpapers/Mirror_reflecting.png",
-    "title": "Mirror Reflecting",
-    "width": 900,
-    "height": 1600,
-    "category": "wallpaper",
-    "createdAt": "2026-02-10T04:59:38.695Z"
-  },
-  {
-    "src": "/wallpapers/futuristic_bike.png",
-    "title": "Futuristic Bike",
-    "width": 900,
-    "height": 1600,
-    "category": "wallpaper",
-    "createdAt": "2026-02-10T04:59:38.672Z"
-  },
-  {
-    "src": "/wallpapers/depressed_boy.png",
-    "title": "Depressed Boy",
-    "width": 900,
-    "height": 1600,
-    "category": "wallpaper",
-    "createdAt": "2026-02-10T04:59:38.650Z"
-  },
-  {
-    "src": "/wallpapers/cute_little_anime.png",
-    "title": "Cute Little Anime",
-    "width": 900,
-    "height": 1600,
-    "category": "wallpaper",
-    "createdAt": "2026-02-10T04:59:38.600Z"
-  },
-  {
-    "src": "/wallpapers/cute_anime_girl.png",
-    "title": "Cute Anime Girl",
-    "width": 900,
-    "height": 1600,
-    "category": "wallpaper",
-    "createdAt": "2026-02-10T04:59:38.553Z"
-  },
-  {
-    "src": "/wallpapers/Books_that_read.png",
-    "title": "Books That Read",
-    "width": 900,
-    "height": 1600,
-    "category": "wallpaper",
-    "createdAt": "2026-02-10T04:59:38.522Z"
-  },
-  {
-    "src": "/wallpapers/blurred_gradient_col.png",
-    "title": "Blurred Gradient Col",
-    "width": 900,
-    "height": 1600,
-    "category": "wallpaper",
-    "createdAt": "2026-02-10T04:59:38.494Z"
-  },
-  {
-    "src": "/wallpapers/astronaut_touching.png",
-    "title": "Astronaut Touching",
-    "width": 900,
-    "height": 1600,
-    "category": "wallpaper",
-    "createdAt": "2026-02-10T04:59:38.472Z"
-  },
-  {
-    "src": "/wallpapers/anime_fox_charac.png",
-    "title": "Anime Fox Charac",
-    "width": 900,
-    "height": 1600,
-    "category": "wallpaper",
-    "createdAt": "2026-02-10T04:59:38.424Z"
-  },
-  {
-    "src": "/wallpapers/Ancient_statue_moonlight.png",
-    "title": "Ancient Statue Moonlight",
-    "width": 900,
-    "height": 1600,
-    "category": "wallpaper",
-    "createdAt": "2026-02-10T04:59:38.391Z"
-  },
-  {
-    "src": "/wallpapers/Ancient_statue.png",
-    "title": "Ancient Statue",
-    "width": 900,
-    "height": 1600,
-    "category": "wallpaper",
-    "createdAt": "2026-02-10T04:59:38.361Z"
-  },
-  {
-    "src": "/wallpapers/a_silhouette_of_a_side.png",
-    "title": "A Silhouette Of A Side",
-    "width": 900,
-    "height": 1600,
-    "category": "wallpaper",
-    "createdAt": "2026-02-10T04:59:38.331Z"
-  },
-  {
-    "src": "/wallpapers/A_mirror_reflecting.png",
-    "title": "A Mirror Reflecting",
-    "width": 900,
-    "height": 1600,
-    "category": "wallpaper",
-    "createdAt": "2026-02-10T04:59:38.297Z"
-  },
-  {
-    "src": "/wallpapers/A_girl_with_brown.png",
-    "title": "A Girl With Brown",
-    "width": 900,
-    "height": 1600,
-    "category": "wallpaper",
-    "createdAt": "2026-02-10T04:59:38.236Z"
-  },
-  {
-    "src": "/wallpapers/Therapy.png",
-    "title": "Therapy",
-    "width": 900,
-    "height": 1600,
-    "category": "wallpaper",
-    "createdAt": "2026-02-10T04:59:38.215Z"
+    "createdAt": "2026-06-03T14:21:45.443Z"
   },
   {
     "src": "/wallpapers/portrait1.png",
@@ -149,7 +13,143 @@
     "width": 900,
     "height": 1600,
     "category": "wallpaper",
-    "createdAt": "2026-02-06T20:09:07.066Z"
+    "createdAt": "2026-06-03T14:21:45.441Z"
+  },
+  {
+    "src": "/wallpapers/paloss5.png",
+    "title": "Paloss5",
+    "width": 900,
+    "height": 1600,
+    "category": "wallpaper",
+    "createdAt": "2026-06-03T14:21:45.431Z"
+  },
+  {
+    "src": "/wallpapers/futuristic_bike.png",
+    "title": "Futuristic Bike",
+    "width": 900,
+    "height": 1600,
+    "category": "wallpaper",
+    "createdAt": "2026-06-03T14:21:45.428Z"
+  },
+  {
+    "src": "/wallpapers/depressed_boy.png",
+    "title": "Depressed Boy",
+    "width": 900,
+    "height": 1600,
+    "category": "wallpaper",
+    "createdAt": "2026-06-03T14:21:45.426Z"
+  },
+  {
+    "src": "/wallpapers/cute_little_anime.png",
+    "title": "Cute Little Anime",
+    "width": 900,
+    "height": 1600,
+    "category": "wallpaper",
+    "createdAt": "2026-06-03T14:21:45.416Z"
+  },
+  {
+    "src": "/wallpapers/cute_anime_girl.png",
+    "title": "Cute Anime Girl",
+    "width": 900,
+    "height": 1600,
+    "category": "wallpaper",
+    "createdAt": "2026-06-03T14:21:45.411Z"
+  },
+  {
+    "src": "/wallpapers/blurred_gradient_col.png",
+    "title": "Blurred Gradient Col",
+    "width": 900,
+    "height": 1600,
+    "category": "wallpaper",
+    "createdAt": "2026-06-03T14:21:45.410Z"
+  },
+  {
+    "src": "/wallpapers/astronaut_touching.png",
+    "title": "Astronaut Touching",
+    "width": 900,
+    "height": 1600,
+    "category": "wallpaper",
+    "createdAt": "2026-06-03T14:21:45.407Z"
+  },
+  {
+    "src": "/wallpapers/anime_fox_charac.png",
+    "title": "Anime Fox Charac",
+    "width": 900,
+    "height": 1600,
+    "category": "wallpaper",
+    "createdAt": "2026-06-03T14:21:45.405Z"
+  },
+  {
+    "src": "/wallpapers/a_silhouette_of_a_side.png",
+    "title": "A Silhouette Of A Side",
+    "width": 900,
+    "height": 1600,
+    "category": "wallpaper",
+    "createdAt": "2026-06-03T14:21:45.396Z"
+  },
+  {
+    "src": "/wallpapers/Therapy.png",
+    "title": "Therapy",
+    "width": 900,
+    "height": 1600,
+    "category": "wallpaper",
+    "createdAt": "2026-06-03T14:21:45.386Z"
+  },
+  {
+    "src": "/wallpapers/Simple_blurred_gradient.png",
+    "title": "Simple Blurred Gradient",
+    "width": 900,
+    "height": 1600,
+    "category": "wallpaper",
+    "createdAt": "2026-06-03T14:21:45.384Z"
+  },
+  {
+    "src": "/wallpapers/Mirror_reflecting.png",
+    "title": "Mirror Reflecting",
+    "width": 900,
+    "height": 1600,
+    "category": "wallpaper",
+    "createdAt": "2026-06-03T14:21:45.383Z"
+  },
+  {
+    "src": "/wallpapers/Books_that_read.png",
+    "title": "Books That Read",
+    "width": 900,
+    "height": 1600,
+    "category": "wallpaper",
+    "createdAt": "2026-06-03T14:21:45.379Z"
+  },
+  {
+    "src": "/wallpapers/Ancient_statue_moonlight.png",
+    "title": "Ancient Statue Moonlight",
+    "width": 900,
+    "height": 1600,
+    "category": "wallpaper",
+    "createdAt": "2026-06-03T14:21:45.377Z"
+  },
+  {
+    "src": "/wallpapers/Ancient_statue.png",
+    "title": "Ancient Statue",
+    "width": 900,
+    "height": 1600,
+    "category": "wallpaper",
+    "createdAt": "2026-06-03T14:21:45.375Z"
+  },
+  {
+    "src": "/wallpapers/A_mirror_reflecting.png",
+    "title": "A Mirror Reflecting",
+    "width": 900,
+    "height": 1600,
+    "category": "wallpaper",
+    "createdAt": "2026-06-03T14:21:45.372Z"
+  },
+  {
+    "src": "/wallpapers/A_girl_with_brown.png",
+    "title": "A Girl With Brown",
+    "width": 900,
+    "height": 1600,
+    "category": "wallpaper",
+    "createdAt": "2026-06-03T14:21:45.370Z"
   },
   {
     "src": "/backgrounds/landscape1.png",
@@ -157,6 +157,6 @@
     "width": 1600,
     "height": 900,
     "category": "background",
-    "createdAt": "2026-02-06T20:09:06.985Z"
+    "createdAt": "2026-06-03T14:21:45.368Z"
   }
 ]
