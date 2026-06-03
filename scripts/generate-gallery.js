@@ -50,7 +50,7 @@ folders.forEach(
         width,
         height,
         category,
-        createdAt: stats.birthtime,
+        createdAt: stats.mtime.toISOString(),
       });
     });
   }
