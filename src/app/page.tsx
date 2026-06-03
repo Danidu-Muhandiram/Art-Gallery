@@ -1,50 +1,30 @@
 "use client";
 
 import Image from "next/image";
+import gallery from "@/data/gallery.json";
 import { useEffect, useState, type CSSProperties } from "react";
 
-const wallpaperFiles = [
-  "Ancient_statue.png",
-  "Ancient_statue_moonlight.png",
-  "anime_fox_charac.png",
-  "astronaut_touching.png",
-  "A_girl_with_brown.png",
-  "A_mirror_reflecting.png",
-  "a_silhouette_of_a_side.png",
-  "blurred_gradient_col.png",
-  "Books_that_read.png",
-  "cute_anime_girl.png",
-  "cute_little_anime.png",
-  "depressed_boy.png",
-  "futuristic_bike.png",
-  "Mirror_reflecting.png",
-  "portrait1.png",
-  "shadowy_figure.png",
-  "Simple_blurred_gradient.png",
-  "Therapy.png",
-];
 
-const formatTitle = (filename: string) =>
-  filename
-    .replace(/\.[^/.]+$/, "")
-    .replace(/[_-]+/g, " ")
-    .replace(/\b\w/g, (char) => char.toUpperCase());
+const wallpapers = gallery.filter(
+  (item) => item.category === "wallpaper"
+) as Array<{
+  src: string;
+  title: string;
+  width: number;
+  height: number;
+  category: "wallpaper";
+}>;
 
-const wallpapers = wallpaperFiles.map((file) => ({
-  src: `/wallpapers/${file}`,
-  title: formatTitle(file),
-  width: 900,
-  height: 1600,
-  category: "wallpaper" as const,
-}));
+const backgrounds = gallery.filter(
+  (item) => item.category === "background"
+) as Array<{
+  src: string;
+  title: string;
+  width: number;
+  height: number;
+  category: "background";
+}>;
 
-const backgrounds = Array.from({ length: 12 }, (_, index) => ({
-  src: "/backgrounds/landscape1.png",
-  title: `Landscape ${String(index + 1).padStart(2, "0")} — Quiet Field`,
-  width: 1600,
-  height: 900,
-  category: "background" as "background",
-}));
 
 function MasonrySection({
   title,
