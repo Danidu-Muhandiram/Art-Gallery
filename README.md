@@ -1,5 +1,10 @@
 # NOIR ATLAS - Personal Art Gallery 🎨
 
+![GitHub Actions](https://img.shields.io/badge/Automation-GitHub%20Actions-blue?logo=githubactions)
+![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)
+![Last Commit](https://img.shields.io/github/last-commit/Danidu-Muhandiram/Art-Gallery)
+![Repo Size](https://img.shields.io/github/repo-size/Danidu-Muhandiram/Art-Gallery)
+
 **NOIR ATLAS** is my personal online art gallery where I share a curated collection of original AI-generated artworks and illustrations.
 Each artwork is refined into high-resolution wallpapers and atmospheric background designs. Some of my works are published on stock platforms, and selected pieces are shared here for free personal use.
 Every release is designed to look clean and balanced on all screen sizes - from mobile phones to ultra-wide monitors 🖥️📱
@@ -11,6 +16,19 @@ The website is built with Next.js and focuses on a cinematic layout, smooth moti
   </a>
 </p>
 
+## Automation System ⚡
+
+The project includes a GitHub Actions workflow that automatically manages the gallery data.
+
+The system automatically:
+
+- 📂 Scans all images inside `public/wallpapers` and `public/backgrounds`
+- ⚡ Generates `src/data/gallery.json`
+- 🧠 Sorts images by file modified time (newest first)
+- 🔄 Updates the JSON file inside the repository
+- 🚀 Triggers automatic deployment on Vercel
+
+👉 **Result:** Just add an image → push → website updates automatically
 
 
 
@@ -85,6 +103,3 @@ I publish designs on stock platforms and share selected artworks here as free do
 ⭐ **If you found this project helpful, please give it a star!** ⭐
 
 ![GitHub stars](https://img.shields.io/github/stars/Danidu-Muhandiram/Art-Gallery?style=social)
-![GitHub forks](https://img.shields.io/github/forks/Danidu-Muhandiram/Art-Gallery?style=social)
-![GitHub issues](https://img.shields.io/github/issues/Danidu-Muhandiram/Art-Gallery)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/Danidu-Muhandiram/)
