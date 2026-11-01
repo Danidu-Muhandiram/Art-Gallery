@@ -25,7 +25,7 @@ export const metadata: Metadata = {
       "A curated collection of original AI artworks and illustrations, crafted as high-resolution wallpapers and backgrounds for screens from mobile to ultra-wide.",
     images: [
       {
-        url: "/personal%20art%20profile.jpg",
+        url: "/art%20profile.png",
         alt: "Personal art profile for NOIR ATLAS",
       },
     ],
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "NOIR ATLAS — Personal Art Gallery",
     description:
       "A curated collection of original AI artworks and illustrations, crafted as high-resolution wallpapers and backgrounds for screens from mobile to ultra-wide.",
-    images: ["/personal%20art%20profile.jpg"],
+    images: ["/art%20profile.png"],
   },
 };
 
