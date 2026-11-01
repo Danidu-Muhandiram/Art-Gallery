@@ -13,9 +13,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ink & Light — Art Gallery",
+  metadataBase: new URL("https://noiratlas.vercel.app"),
+  title: "NOIR ATLAS — Personal Art Gallery",
   description:
-    "A fast, minimalist art showcase for wallpapers and backgrounds in a black-and-white palette.",
+    "A curated collection of original AI artworks and illustrations, crafted as high-resolution wallpapers and backgrounds for screens from mobile to ultra-wide.",
+  openGraph: {
+    type: "website",
+    url: "https://noiratlas.vercel.app/",
+    title: "NOIR ATLAS — Personal Art Gallery",
+    description:
+      "A curated collection of original AI artworks and illustrations, crafted as high-resolution wallpapers and backgrounds for screens from mobile to ultra-wide.",
+    images: [
+      {
+        url: "/personal%20art%20profile.jpg",
+        alt: "Personal art profile for NOIR ATLAS",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NOIR ATLAS — Personal Art Gallery",
+    description:
+      "A curated collection of original AI artworks and illustrations, crafted as high-resolution wallpapers and backgrounds for screens from mobile to ultra-wide.",
+    images: ["/personal%20art%20profile.jpg"],
+  },
 };
 
 export default function RootLayout({
